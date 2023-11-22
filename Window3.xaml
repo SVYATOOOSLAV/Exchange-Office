@@ -1,0 +1,30 @@
+﻿<Window x:Class="Exchange_Office_WPF.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exchange_Office_WPF"
+        mc:Ignorable="d"
+        Height="261" Width="529"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True" 
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown">
+    <Border Background="#DCDCDC" CornerRadius="30" Height="262" VerticalAlignment="Center" HorizontalAlignment="Left" Width="528">
+        <Grid Height="262" VerticalAlignment="Center" Margin="9,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <DataGrid  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" x:Name ="dataGrid1"  AutoGenerateColumns="False" IsReadOnly="True" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False" Margin="10,15,0,23" HorizontalAlignment="Left" BorderBrush="{x:Null}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header ="Exchange office" Binding="{Binding Path=nameOfTheOffice}" IsReadOnly="True"  Width="120" CanUserSort="False"/>
+                    <DataGridTextColumn Header="Number of sold" Binding="{Binding Path=numberOfSold}" IsReadOnly="True" Width="120" CanUserSort="False"/>
+                    <DataGridTextColumn Header="Total sales amount" Binding="{Binding Path=totalSalesAmount}" IsReadOnly="True" Width="150" CanUserSort="False"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Выйти" Background="Transparent" Foreground="White" HorizontalAlignment="Left" Margin="423,15,0,0" VerticalAlignment="Top" Height="22" Width="76" RenderTransformOrigin="0.857,0.561" Click="Button_Click" Cursor="Hand" BorderBrush="Black"/>
+        </Grid>
+    </Border>
+</Window>

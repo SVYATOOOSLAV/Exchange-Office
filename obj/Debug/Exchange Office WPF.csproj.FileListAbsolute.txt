@@ -1,0 +1,29 @@
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\bin\Debug\Exchange Office WPF.exe.config
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\bin\Debug\Exchange Office WPF.exe
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\bin\Debug\Exchange Office WPF.pdb
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.csproj.AssemblyReference.cache
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\MainWindow.g.cs
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\App.g.cs
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF_MarkupCompile.cache
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF_MarkupCompile.lref
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\MainWindow.baml
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.g.resources
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange_Office_WPF.Properties.Resources.resources
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.csproj.GenerateResource.cache
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.csproj.CoreCompileInputs.cache
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.exe
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.pdb
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Window1.g.cs
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Window1.baml
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Window2.g.cs
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Window2.baml
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Window3.g.cs
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Window3.baml
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\App.baml
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Theme\ComboboxStyles.baml
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Theme\ButtonStyles.baml
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Theme\TextBoxStyles.baml
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\bin\Debug\Exchange Office WPF.exe.manifest
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\bin\Debug\Exchange Office WPF.application
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.exe.manifest
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.application
