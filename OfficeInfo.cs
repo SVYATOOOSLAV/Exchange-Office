@@ -40,7 +40,7 @@ namespace Exchange_Office_WPF
                 {
                     for (int i = 0; i < str.Length; i++)
                     {
-                        if (str[i] == ' ' && Char.IsDigit(str[i + 1]))
+                        if (Char.IsWhiteSpace(str[i]) && Char.IsDigit(str[i + 1]))
                         {
                             nameOffice = str.Substring(0, i);
                             otherInfo = str.Substring(i + 1);
@@ -96,7 +96,7 @@ namespace Exchange_Office_WPF
 
                 for (int i = 0; i < offices.Count; i++)
                 {
-                    File.AppendAllText(path, $"{offices[i].nameOfTheOffice} {offices[i].sellingRate} {offices[i].purchaceRate} {offices[i].numberOfSold} {offices[i].numberOfPurchased}\n");
+                    File.AppendAllText(path, $"{offices[i]}\n");
                 }
             }
             else
@@ -105,9 +105,35 @@ namespace Exchange_Office_WPF
 
                 for (int i = 0; i < offices.Count; i++)
                 {
-                    File.AppendAllText("Info.txt", $"{offices[i].nameOfTheOffice} {offices[i].sellingRate} {offices[i].purchaceRate} {offices[i].numberOfSold} {offices[i].numberOfPurchased}\n");
+                    File.AppendAllText("Info.txt", $"{offices[i]}\n");
                 }
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is OfficeInfo info &&
+                   nameOfTheOffice == info.nameOfTheOffice &&
+                   sellingRate == info.sellingRate &&
+                   purchaceRate == info.purchaceRate &&
+                   numberOfSold == info.numberOfSold &&
+                   numberOfPurchased == info.numberOfPurchased;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = 892826532;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(nameOfTheOffice);
+            hashCode = hashCode * -1521134295 + sellingRate.GetHashCode();
+            hashCode = hashCode * -1521134295 + purchaceRate.GetHashCode();
+            hashCode = hashCode * -1521134295 + numberOfSold.GetHashCode();
+            hashCode = hashCode * -1521134295 + numberOfPurchased.GetHashCode();
+            return hashCode;
+        }
+
+        public override string ToString()
+        {
+            return $"{nameOfTheOffice} {sellingRate} {purchaceRate} {numberOfSold} {numberOfPurchased}";
         }
     }
 }

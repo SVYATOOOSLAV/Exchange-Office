@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Exchange Office WPF.exe" size="62400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Exchange Office WPF.exe" size="63424">
       <assemblyIdentity name="Exchange Office WPF" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lZkQrQTW9Td8svW6qZTbbnLRYDM6BIk0Cdd+V0Bu+jM=</dsig:DigestValue>
+        <dsig:DigestValue>Apqkz1FMcpDPDYj7O8OcPyr8Lg10XSZRlz7aqOSAEAw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

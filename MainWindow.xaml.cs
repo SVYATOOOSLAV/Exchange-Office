@@ -42,9 +42,9 @@ namespace Exchange_Office_WPF
             //offices.Add(new OfficeInfo("Tinkoff", 102.65, 88, rnd.Next(5000, 100000), rnd.Next(5000, 100000)));
             //offices.Add(new OfficeInfo("VTB", 99.95, 93.35, rnd.Next(5000, 100000), rnd.Next(5000, 100000)));
 
-            offices = OfficeInfo.MakeListOfOffices(path);
+            //offices = OfficeInfo.MakeListOfOffices(path);
 
-            dataGrid1.ItemsSource = offices;
+            //dataGrid1.ItemsSource = offices;
 
             combobox1.Items.Add("Названию");
             combobox1.Items.Add("Курсу продажи");
@@ -86,6 +86,13 @@ namespace Exchange_Office_WPF
                 return;
             }
 
+            double maximumDiff = getMaxDiffBetweenSellRateAndPurchaseRate(offices);
+
+            MessageBox.Show($"Максимальная разница между курсом продажи и покупки: {maximumDiff}", "Информация", MessageBoxButton.OK);
+        }
+
+        public double getMaxDiffBetweenSellRateAndPurchaseRate(List<OfficeInfo> offices)
+        {
             double maximumDiff = double.MinValue;
             foreach (OfficeInfo office in offices)
             {
@@ -94,7 +101,7 @@ namespace Exchange_Office_WPF
                     maximumDiff = office.sellingRate - office.purchaceRate;
                 }
             }
-            MessageBox.Show($"Максимальная разница между курсом продажи и покупки: {maximumDiff}", "Информация", MessageBoxButton.OK);
+            return maximumDiff;
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
@@ -124,23 +131,35 @@ namespace Exchange_Office_WPF
             dataGrid1.Items.Refresh();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        public int getNumberOfSold(List<OfficeInfo> offices)
         {
             int counter = 0;
             foreach (OfficeInfo office in offices)
             {
                 counter += office.numberOfSold;
             }
+            return counter;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            int counter = getNumberOfSold(offices);
             MessageBox.Show($"Количество проданных долларов: {counter}", "Информация", MessageBoxButton.OK);
+        }
+
+        public double getAllSumOfSellCurrency(List<OfficeInfo> offices)
+        {
+            double sum = 0;
+            foreach (OfficeInfo office in offices)
+            {
+                sum += office.numberOfSold * office.sellingRate;
+            }
+            return sum;
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            double sum = 0;
-            foreach (OfficeInfo bank in offices)
-            {
-                sum += bank.numberOfSold * bank.sellingRate;
-            }
+            double sum = getAllSumOfSellCurrency(offices);
             MessageBox.Show($"Общая сумма на которую проданы доллары: {sum}", "Информация", MessageBoxButton.OK);
         }
 
@@ -150,46 +169,52 @@ namespace Exchange_Office_WPF
             window3.ShowDialog();
         }
 
+        public List<OfficeInfo> sortingListOfOffices(List<OfficeInfo> offices, int typeOfSort, int reverseOrder)
+        {
+            switch (typeOfSort)
+            {
+                case 0:
+                    offices = offices.OrderBy(x => x.nameOfTheOffice).ToList();
+                    //QuickSortName(0, offices.Count - 1);
+                    break;
+                case 1:
+                    offices = offices.OrderBy(x => x.sellingRate).ThenBy(x => x.nameOfTheOffice).ToList();
+                    //QuickSortSellingRate(0, offices.Count - 1);
+                    break;
+                case 2:
+                    offices = offices.OrderBy(x => x.purchaceRate).ThenBy(x => x.nameOfTheOffice).ToList();
+                    //QuickSortPurchaseRate(0, offices.Count - 1);
+                    break;
+                case 3:
+                    offices = offices.OrderBy(x => x.numberOfSold).ThenBy(x => x.nameOfTheOffice).ToList();
+                    //QuickSortNumberOfSold(0, offices.Count - 1);
+                    break;
+                case 4:
+                    offices = offices.OrderBy(x => x.numberOfPurchased).ThenBy(x => x.nameOfTheOffice).ToList();
+                    //QuickSortNumberOfPurchased(0, offices.Count - 1);
+                    break;
+                default:
+                    MessageBox.Show("Параметр не найден", "Информация", MessageBoxButton.OK);
+                    break;
+            }
+
+            if (reverseOrder == 1)
+            {
+                offices.Reverse();
+            }
+
+            return offices;
+        }
+
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             if (combobox1.Text != "" && combobox2.Text != "")
             {
-                switch (combobox1.SelectedIndex)
-                {
-                    case 0:
-                        offices = offices.OrderBy(x => x.nameOfTheOffice).ToList();
-                        //QuickSortName(0, offices.Count - 1);
-                        break;
-                    case 1:
-                        offices = offices.OrderBy(x => x.sellingRate).ThenBy(x => x.nameOfTheOffice).ToList();
-                        //QuickSortSellingRate(0, offices.Count - 1);
-                        break;
-                    case 2:
-                        offices = offices.OrderBy(x => x.purchaceRate).ThenBy(x => x.nameOfTheOffice).ToList();
-                        //QuickSortPurchaseRate(0, offices.Count - 1);
-                        break;
-                    case 3:
-                        offices = offices.OrderBy(x => x.numberOfSold).ThenBy(x => x.nameOfTheOffice).ToList();
-                        //QuickSortNumberOfSold(0, offices.Count - 1);
-                        break;
-                    case 4:
-                        offices = offices.OrderBy(x => x.numberOfPurchased).ThenBy(x => x.nameOfTheOffice).ToList();
-                        //QuickSortNumberOfPurchased(0, offices.Count - 1);
-                        break;
-                    default:
-                        MessageBox.Show("Параметр не найден","Информация",MessageBoxButton.OK);
-                        break;
-                }
+                int typeOfSort = combobox1.SelectedIndex;
+                int reverseOrder = combobox2.SelectedIndex;
 
-                switch (combobox2.SelectedIndex)
-                {
-                    case 0:
+                sortingListOfOffices(offices, typeOfSort, reverseOrder);
 
-                        break;
-                    case 1:
-                        offices.Reverse();
-                        break;
-                }
                 dataGrid1.ItemsSource = offices;
             }
             else
