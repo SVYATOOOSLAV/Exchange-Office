@@ -27,3 +27,4 @@ D:\Visual Studio Project\Техлогии разработки ПО\Exchange Off
 D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\bin\Debug\Exchange Office WPF.application
 D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.exe.manifest
 D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange Office WPF.application
+D:\Visual Studio Project\Техлогии разработки ПО\Exchange Office WPF\obj\Debug\Exchange_Office_WPF.Form1.resources

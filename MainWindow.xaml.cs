@@ -42,9 +42,9 @@ namespace Exchange_Office_WPF
             //offices.Add(new OfficeInfo("Tinkoff", 102.65, 88, rnd.Next(5000, 100000), rnd.Next(5000, 100000)));
             //offices.Add(new OfficeInfo("VTB", 99.95, 93.35, rnd.Next(5000, 100000), rnd.Next(5000, 100000)));
 
-            //offices = OfficeInfo.MakeListOfOffices(path);
+            offices = OfficeInfo.MakeListOfOffices(path);
 
-            //dataGrid1.ItemsSource = offices;
+            dataGrid1.ItemsSource = offices;
 
             combobox1.Items.Add("Названию");
             combobox1.Items.Add("Курсу продажи");
@@ -169,28 +169,28 @@ namespace Exchange_Office_WPF
             window3.ShowDialog();
         }
 
-        public List<OfficeInfo> sortingListOfOffices(List<OfficeInfo> offices, int typeOfSort, int reverseOrder)
+        public List<OfficeInfo> sortingListOfOffices(List<OfficeInfo> listOfOffice, int typeOfSort, int reverseOrder)
         {
             switch (typeOfSort)
             {
                 case 0:
-                    offices = offices.OrderBy(x => x.nameOfTheOffice).ToList();
+                    listOfOffice = listOfOffice.OrderBy(x => x.nameOfTheOffice).ToList();
                     //QuickSortName(0, offices.Count - 1);
                     break;
                 case 1:
-                    offices = offices.OrderBy(x => x.sellingRate).ThenBy(x => x.nameOfTheOffice).ToList();
+                    listOfOffice = listOfOffice.OrderBy(x => x.sellingRate).ThenBy(x => x.nameOfTheOffice).ToList();
                     //QuickSortSellingRate(0, offices.Count - 1);
                     break;
                 case 2:
-                    offices = offices.OrderBy(x => x.purchaceRate).ThenBy(x => x.nameOfTheOffice).ToList();
+                    listOfOffice = listOfOffice.OrderBy(x => x.purchaceRate).ThenBy(x => x.nameOfTheOffice).ToList();
                     //QuickSortPurchaseRate(0, offices.Count - 1);
                     break;
                 case 3:
-                    offices = offices.OrderBy(x => x.numberOfSold).ThenBy(x => x.nameOfTheOffice).ToList();
+                    listOfOffice = listOfOffice.OrderBy(x => x.numberOfSold).ThenBy(x => x.nameOfTheOffice).ToList();
                     //QuickSortNumberOfSold(0, offices.Count - 1);
                     break;
                 case 4:
-                    offices = offices.OrderBy(x => x.numberOfPurchased).ThenBy(x => x.nameOfTheOffice).ToList();
+                    listOfOffice = listOfOffice.OrderBy(x => x.numberOfPurchased).ThenBy(x => x.nameOfTheOffice).ToList();
                     //QuickSortNumberOfPurchased(0, offices.Count - 1);
                     break;
                 default:
@@ -200,10 +200,10 @@ namespace Exchange_Office_WPF
 
             if (reverseOrder == 1)
             {
-                offices.Reverse();
+                listOfOffice.Reverse();
             }
 
-            return offices;
+            return listOfOffice;
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
@@ -213,7 +213,7 @@ namespace Exchange_Office_WPF
                 int typeOfSort = combobox1.SelectedIndex;
                 int reverseOrder = combobox2.SelectedIndex;
 
-                sortingListOfOffices(offices, typeOfSort, reverseOrder);
+                offices = sortingListOfOffices(offices, typeOfSort, reverseOrder);
 
                 dataGrid1.ItemsSource = offices;
             }
@@ -236,7 +236,10 @@ namespace Exchange_Office_WPF
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
+            Form1 form1 = new Form1();
             this.Close();
+            form1.ShowDialog();
+
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
